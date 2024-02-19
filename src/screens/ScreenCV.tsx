@@ -6,44 +6,74 @@ import { Body2 } from '../Components/Body2'
 import { CommonActions, useNavigation } from '@react-navigation/native';
 import { BotonReutilizable } from '../Components/BotonReutilizable';
 import { InputComponent } from '../Components/Input';
-interface Loginform{
+import { ScrollView, TouchableOpacity } from 'react-native-gesture-handler';
+import { CV } from '../navegador/Stacknavigator';
+import { hasErrorCV, showSnackBar, verifyExistUserCV } from '../common/autoValid';
+import { ButtonComponent } from '../Components/Buttom';
+
+export interface CVform{
   nombre: string;
   apellido: string;
-  ci:number;
-  telefono:number;
+  ci:string;
+  telefono:string;
   estadoCivil:string;
   nivelAcademico:string;
   profecion:string; 
+  hasError:boolean;
 }
-const LoginScreen = () => {
-  const[Form, setForm]=useState<Loginform>({
+
+interface CVProps{
+  userCv:CV[],
+  setUserCV:(user:CV)=>void;
+
+}
+
+export const ScreenCV = ({userCv,setUserCV}:CVProps) => {
+  const navigation=useNavigation();
+  const[cv, setCV]=useState<CVform>({
     nombre: '',
-    apellido:'',
-    ci:0,
-    telefono:0,
+    apellido: '',
+    ci:'',
+    telefono:'',
     estadoCivil:'',
     nivelAcademico:'',
     profecion:'',
-  });}
-  const handlerChangeText = (name: string, value: string): void => {
-    console.log(name);
-    console.log(value);
-}
+    hasError:false,
+});
+const handlerSaveInfo=()=>{
 
- const handlerChangeNumber = (name: string, value: number): void => {
-     console.log(name);
-     console.log(value);
-}
-const handleChange = (name: string, value: string | number): void => {
-  if (typeof value === 'string') {
-      handlerChangeText(name, value);
-  } else if (typeof value === 'number') {
-      handlerChangeNumber(name, value);
+  if(hasErrorCV(cv)){
+      setCV(prevState =>({
+          ...prevState,
+          hasError:true
+      }))
+      return;
   }
-}
-export const ScreenCV = () => {
-  const navigation=useNavigation();
-  
+  setCV(prevState =>({
+    ...prevState,
+    hasError:false
+}))
+
+  // console.log(Form)
+  const existUser=verifyExistUserCV(userCv,cv);
+  if(existUser){
+      showSnackBar("El registro ya existe",'Red');
+      console.log('El registro ya existe');
+      return;
+  }
+
+setUserCV(cv)
+showSnackBar("Usuario registrado con éxito!", PRIMARY_COLOR)
+console.log(cv);
+//volver inicio sesión
+navigation.goBack();
+  };
+  const handlerChangeText=(name: string, value: string)=>{
+    setCV(prevState=>({
+  ...prevState,
+  [name]:value,
+}));
+  };
     return (
   
       <View>
@@ -52,19 +82,25 @@ export const ScreenCV = () => {
           <Title Title='Curriculum Vitae'/>
           <View style={style.contenedorLG} >
           <Image style={style.imagen2}  source={require('../img/logoBlanco.png')} /> 
+          <TouchableOpacity style={style.contenedorLG1}  onPress={()=>navigation.dispatch(CommonActions.navigate({name:'ScreenMenu'}))}>
+        <Image style={style.imagen2}  source={require('../img/volver.png')} /> 
+        </TouchableOpacity>
           </View>
          
           
           <Body2 >
+            <ScrollView>
               <InputComponent placeholder='Ingrese su Nombre' name={'nombre'} onChangeText={handlerChangeText}/>
                 <InputComponent placeholder='Ingrese su Apellido' name={'apellido'} onChangeText={handlerChangeText}/>
                 <InputComponent placeholder='ingrese su Numero de Cedula'name={'ci'} onChangeText={handlerChangeText}/>
                 <InputComponent placeholder='Ingrese su Telefono' name={'telefono'} onChangeText={handlerChangeText}/>
+                <InputComponent placeholder='ingrese su Estado Civil'name={'estadoCivil'} onChangeText={handlerChangeText}/>
+                <InputComponent placeholder='Ingrese su Nivel Academico' name={'nivelAcademico'} onChangeText={handlerChangeText}/>
+                <InputComponent placeholder='ingrese su Profecion'name={'profecion'} onChangeText={handlerChangeText}/>
+                <ButtonComponent title='Aceptar' onPress={handlerSaveInfo} />
+                {/* <BotonReutilizable title='Aceptar' onPress={() => navigation.dispatch(CommonActions.navigate({ name: 'ScreenCV1' }))}/>  */}
+                </ScrollView>
                 
-                <BotonReutilizable title='Sigiente' onPress={() => navigation.dispatch(CommonActions.navigate({ name: 'ScreenCV1' }))}/> 
-                <View  style={style.btnR}>
-              <BotonReutilizable title='Retornar' onPress={() => navigation.dispatch(CommonActions.navigate({ name: 'ScreenMenu' }))}/> 
-              </View>
           </Body2>
       </View>
         </View>
@@ -117,7 +153,20 @@ imagen2:{
     left:300,
     top:-80,
 
-  }
+  },
+  contenedorLG1:{
+    position:'absolute',
+    //backgroundColor:'red',
+    alignItems:'center',
+    justifyContent:'center',
+    height:90,
+    width:90,
+    right:250,
+    top:-80,
+  },
+  scrollView: {
+    paddingHorizontal: 10,
+},
   
   
 })

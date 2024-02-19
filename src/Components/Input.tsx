@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, TextInput, View } from 'react-native'
-import { INPUT_COLOR } from '../common/color';
+import { INPUT_COLOR, PRIMARY_COLOR } from '../common/color';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 
 interface InputProps{
@@ -11,11 +12,15 @@ interface InputProps{
     hasError?:boolean;
     //método que captura el valor del input
     onChangeText: (name: string, value: string) =>void;
+    accionIcon?:()=>void;
 }
 
-export const InputComponent = ({placeholder, name, onChangeText,isPassword=false,hasError}:InputProps) => {
+export const InputComponent = ({placeholder, name, onChangeText,isPassword=false,hasIcon=false,accionIcon=()=>{},hasError}:InputProps) => {
   return (
     <View>
+        {
+            (hasIcon)?<Icon style={styles.icon} name='visibility' size={20} color={PRIMARY_COLOR} onPress={accionIcon}/>:null
+        }
     <TextInput
         placeholder={placeholder}
         keyboardType={'default'}
@@ -28,8 +33,14 @@ export const InputComponent = ({placeholder, name, onChangeText,isPassword=false
   )
  
 }
-// secureTextEntry={isPassword}=recordar instanciar en el inputText
+
 const styles=StyleSheet.create({
+    icon:{
+      position:'absolute',
+      right:20,
+      zIndex:1,
+      marginTop:22
+    },
     inputText:{
         backgroundColor:INPUT_COLOR,
         paddingHorizontal:20,
