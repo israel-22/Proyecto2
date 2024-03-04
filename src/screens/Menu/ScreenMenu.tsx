@@ -36,8 +36,8 @@ export const ScreenMenu = () => {
              <Image style={style.imagen1}  source={require('../../img/factory.png')} /> 
               </View>
             <View  style={style.btnR}>
-            <BotonReutilizable title={'Cargar Cv'}onPress={()=>navigation.dispatch(CommonActions.navigate({name:'ScreenCV'}))}/>
-            <BotonReutilizable title={'Postular'} onPress={()=>navigation.dispatch(CommonActions.navigate({name:'ScreenPostular'}))}/>
+            <BotonReutilizable title={'CargarCv'}onPress={()=>navigation.dispatch(CommonActions.navigate({name:'ScreenCV'}))}/>
+            <BotonReutilizable title={'Postular'} onPress={()=>navigation.dispatch(CommonActions.navigate({name:'HomeScreen'}))}/>
             </View>
         </Body2>
     </View>

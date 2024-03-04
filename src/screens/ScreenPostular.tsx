@@ -205,7 +205,7 @@ const handlePostular = () => {
             <View style={[styles.container, styles.marginBottom]}>
               <Image style={styles.imagen}  source={require('../img/correoEcuador.png')}  /> 
               <View style={styles.textConatiner}>
-                <Text style={styles.txt}>Correros del Ecuador busca Analista de Datos en Orellana</Text>
+                <Text style={styles.txt}>Correos del Ecuador busca Analista de Datos en Orellana</Text>
               </View>
               <View style={styles.btn}>
               <ButtonComponent title='postular' onPress={handlePostular} />

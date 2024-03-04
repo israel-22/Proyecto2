@@ -163,10 +163,7 @@ imagen2:{
     width:90,
     right:250,
     top:-80,
-  },
-  scrollView: {
-    paddingHorizontal: 10,
-},
+  }
   
   
 })

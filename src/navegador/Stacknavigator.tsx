@@ -1,13 +1,15 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import { LoginScreen } from '../screens/LoginScreen';
+import { ScreenCV } from '../screens/ScreenCV';
+
 import { PRIMARY_COLOR } from '../common/color';
 import { ScreenMenu } from '../screens/Menu/ScreenMenu';
 import { ScreenPostular } from '../screens/ScreenPostular';
-import { ScreenCV } from '../screens/ScreenCV';
 
 //import { ScreenRegistro } from '../screens/ScreenRegistro';
 import { useState } from 'react';
 import { ScreenRegistro } from '../screens/ScreenRegistro';
+import { HomeScreen } from '../screens/Postular/PostularScreen';
 
 //Datos de prueba
 export interface User{
@@ -52,6 +54,7 @@ export const Stacknavigator=()=> {
       <Stack.Screen options={{headerShown:false}} name="ScreenMenu" component={ScreenMenu} />
       <Stack.Screen options={{headerShown:false}} name="ScreenCV" children={()=><ScreenCV userCv={userCV} setUserCV={ handleUser}/>} />
       <Stack.Screen options={{headerShown:false}} name="ScreenPostular" component={ScreenPostular} />
+      <Stack.Screen options={{headerShown:false}} name="HomeScreen" component={HomeScreen} />
      <Stack.Screen options={{headerShown:false}} name="ScreenRegistro" children={()=><ScreenRegistro usersLogin={userLogin} setUsersLogin={handlerAddUser}/>}/>  
 
    
