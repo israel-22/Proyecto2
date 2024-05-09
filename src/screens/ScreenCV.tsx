@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Image, StatusBar, StyleSheet, Text, View } from 'react-native'
 import { Title } from '../Components/Title'
-import { PRIMARY_COLOR} from '../common/color';
+import { PRIMARY_COLOR, TEXT_COLOR } from '../common/color';
 import { Body2 } from '../Components/Body2'
 import { CommonActions, useNavigation } from '@react-navigation/native';
 import { BotonReutilizable } from '../Components/BotonReutilizable';
@@ -79,9 +79,9 @@ navigation.goBack();
       <View>
       <View>
           <StatusBar backgroundColor={PRIMARY_COLOR}/>
-          <Title Title='Curriculum Vitae'/>
+          <Title Title='Contactos'/>
           <View style={style.contenedorLG} >
-          <Image style={style.imagen2}  source={require('../img/logoBlanco.png')} /> 
+          <Image style={style.imagen2}  source={require('../img/MG-Logo-2010.png')} /> 
           <TouchableOpacity style={style.contenedorLG1}  onPress={()=>navigation.dispatch(CommonActions.navigate({name:'ScreenMenu'}))}>
         <Image style={style.imagen2}  source={require('../img/volver.png')} /> 
         </TouchableOpacity>
@@ -90,16 +90,17 @@ navigation.goBack();
           
           <Body2 >
             <ScrollView>
-              <InputComponent placeholder='Ingrese su Nombre' name={'nombre'} onChangeText={handlerChangeText}/>
+              <InputComponent placeholder ='Ingrese su Nombre' name={'nombre'} onChangeText={handlerChangeText}/>
                 <InputComponent placeholder='Ingrese su Apellido' name={'apellido'} onChangeText={handlerChangeText}/>
-                <InputComponent placeholder='ingrese su Numero de Cedula'name={'ci'} onChangeText={handlerChangeText}/>
                 <InputComponent placeholder='Ingrese su Telefono' name={'telefono'} onChangeText={handlerChangeText}/>
-                <InputComponent placeholder='ingrese su Estado Civil'name={'estadoCivil'} onChangeText={handlerChangeText}/>
-                <InputComponent placeholder='Ingrese su Nivel Academico' name={'nivelAcademico'} onChangeText={handlerChangeText}/>
-                <InputComponent placeholder='ingrese su Profecion'name={'profecion'} onChangeText={handlerChangeText}/>
                 <ButtonComponent title='Aceptar' onPress={handlerSaveInfo} />
-                {/* <BotonReutilizable title='Aceptar' onPress={() => navigation.dispatch(CommonActions.navigate({ name: 'ScreenCV1' }))}/>  */}
                 </ScrollView>
+                <Image style={style.imagen1} source={require('../img/Facebook_logo_(square).png')}/>
+                
+                <View >
+              
+              <Text style={style.Text} >Llamanos +593-987878487</Text>
+                </View>
                 
           </Body2>
       </View>
@@ -126,13 +127,21 @@ const style=StyleSheet.create({
       width:'120%',
   },
   imagen1:{
+    top:-250,
     alignItems:'center',
     justifyContent:'center',
-    height:'70%',
-    width:'40%',
+    height:90,
+    width:90,
+},
+imagen3:{
+  top:50,
+  alignItems:'center',
+  justifyContent:'center',
+  height:'20%',
+  width:'20%',
 },
 imagen2:{
-  height:'80%',
+  height:'60%',
   width:'60%',
 },
   btnR:{
@@ -163,7 +172,18 @@ imagen2:{
     width:90,
     right:250,
     top:-80,
-  }
+  },
+  placeholder:{
+    textDecorationColor: 'red'
+  },
+  Text:{
+    alignItems: 'center',
+    justifyContent:'center',
+    fontSize:27,
+        fontWeight:'bold',
+        color:'black',
+        textAlign:'center'
+  },
   
   
 })

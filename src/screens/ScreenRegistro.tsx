@@ -98,9 +98,12 @@ const [hiddenPassword, setHiddenPassword] = useState(true);
                 name={'password'} 
                 onChangeText={handlerChangeText} 
                 hasError={Form.hasError} 
-                hasIcon={true}
                 accionIcon={()=>setHiddenPassword(!hiddenPassword)}
-                isPassword={hiddenPassword}/>            
+                isPassword={hiddenPassword}/>    
+
+                  <TouchableOpacity style={style.ver}onPress={()=>setHiddenPassword(!hiddenPassword)}>
+                <Image style={style.imagenV} source={require('../img/boton-de-visibilidad.png')}/>
+                 </TouchableOpacity>        
 
             </View>
             <View style={stylesGlobal.textNavigation}>
@@ -111,3 +114,43 @@ const [hiddenPassword, setHiddenPassword] = useState(true);
   )
 }
 
+const style=StyleSheet.create({
+    contaner:{
+        alignItems:'center',
+        width:280,
+        height:190,
+        justifyContent:'center',
+        left:40,
+        top:-30,
+        //backgroundColor:'grey',      
+    },
+    imagenV:{
+      width:'30%',
+      height:'30%'
+    },
+    imagen:{
+        alignItems:'center',
+        justifyContent:'center',
+        height:'50%',
+        width:'30%',
+    },
+    btnR:{
+        top:-10,
+    },
+    btn:{
+        top:-125,
+    },
+    txt:{
+        top:-30,  
+    },
+    ver:{
+     alignItems:'center',
+    justifyContent:'center',
+    top:-60,
+    left:'80%',
+        width:'20%',
+        height:'20%',
+        //backgroundColor:'grey',
+
+    }
+})

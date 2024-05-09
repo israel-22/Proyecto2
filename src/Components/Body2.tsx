@@ -13,7 +13,7 @@ export const Body2 = (props:any) => {
 }
 const style=StyleSheet.create({
     container:{
-        backgroundColor:'skyblue',
+        backgroundColor:'white',
         borderTopRightRadius:30,
         borderTopLeftRadius:30,
         paddingHorizontal:30,

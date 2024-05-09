@@ -1,7 +1,7 @@
 import React from 'react'
 import { Image, StatusBar, StyleSheet, Text, View } from 'react-native'
 import { Title } from '../../Components/Title'
-import { PRIMARY_COLOR, BODY_COLOR } from '../../common/color';
+import { PRIMARY_COLOR, BODY_COLOR, TEXT_COLOR } from '../../common/color';
 import { BotonReutilizable } from '../../Components/BotonReutilizable'
 import { Body2 } from '../../Components/Body2'
 import { TouchableOpacity } from 'react-native-gesture-handler';
@@ -18,7 +18,7 @@ export const ScreenMenu = () => {
         <StatusBar backgroundColor={PRIMARY_COLOR}/>
         <Title Title='Menu Principal'/>
         <View style={style.contenedorLG} >
-        <Image style={stylesGlobal.imagen2}  source={require('../../img/logoBlanco.png')} /> 
+        <Image style={stylesGlobal.imagen2}  source={require('../../img/MG-Logo-2010.png')} /> 
         <TouchableOpacity style={stylesGlobal.contenedorLG1} onPress={()=>navigation.dispatch(CommonActions.navigate({name:'LoginScreen'}))}>
         <Image style={stylesGlobal.imagen2}  source={require('../../img/volver.png')} /> 
         </TouchableOpacity>
@@ -27,17 +27,16 @@ export const ScreenMenu = () => {
         
         <Body2 >
             <View style={style.contaner} >
-             <Image style={style.imagen}  source={require('../../img/hhrr.png')}  /> 
+             <Image style={style.imagen}  source={require('../../img/mg-ehs.jpg')}  /> 
              
             </View>
-            <View  style={style.btnR}>
+            <View >
               
-            <Image style={style.imagen1}  source={require('../../img/doc.png')} /> 
-             <Image style={style.imagen1}  source={require('../../img/factory.png')} /> 
+            <Text style={style.Text} >Consulte sus requerimientos AQUÍ!!</Text>
               </View>
             <View  style={style.btnR}>
-            <BotonReutilizable title={'CargarCv'}onPress={()=>navigation.dispatch(CommonActions.navigate({name:'ScreenCV'}))}/>
-            <BotonReutilizable title={'Postular'} onPress={()=>navigation.dispatch(CommonActions.navigate({name:'HomeScreen'}))}/>
+            <BotonReutilizable title={'Contactos'}onPress={()=>navigation.dispatch(CommonActions.navigate({name:'ScreenCV'}))}/>
+            <BotonReutilizable title={'Catálogo'} onPress={()=>navigation.dispatch(CommonActions.navigate({name:'ScreenPostular'}))}/>
             </View>
         </Body2>
     </View>
@@ -56,8 +55,17 @@ const style=StyleSheet.create({
   imagen:{
       alignItems:'center',
       justifyContent:'center',
-      height:'70%',
-      width:'120%',
+      height:'85%',
+      width:'135%',
+      borderTopRightRadius:30,
+        borderTopLeftRadius:30,
+        borderBottomLeftRadius: 30,
+        borderBottomRightRadius: 30,
+        shadowColor: 'black',
+        shadowOffset: { width: 2, height: 8 },
+        shadowOpacity: 0.25,
+        shadowRadius: 3,
+        
   },
   imagen1:{
     alignItems:'center',
@@ -84,6 +92,14 @@ const style=StyleSheet.create({
     left:300,
     top:-80,
 
+  },
+  Text:{
+    alignItems: 'center',
+    justifyContent:'center',
+    fontSize:27,
+        fontWeight:'bold',
+        color:'black',
+        textAlign:'center'
   },
 
   

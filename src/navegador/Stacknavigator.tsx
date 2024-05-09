@@ -9,7 +9,7 @@ import { ScreenPostular } from '../screens/ScreenPostular';
 //import { ScreenRegistro } from '../screens/ScreenRegistro';
 import { useState } from 'react';
 import { ScreenRegistro } from '../screens/ScreenRegistro';
-import { HomeScreen } from '../screens/Postular/PostularScreen';
+
 
 //Datos de prueba
 export interface User{
@@ -50,12 +50,11 @@ export const Stacknavigator=()=> {
   }
   return (
     <Stack.Navigator screenOptions={{cardStyle:{backgroundColor:PRIMARY_COLOR}}}>
-      <Stack.Screen options={{headerShown:false}} name="LoginScreen" children={()=><LoginScreen user={userLogin}/>} /> 
-      <Stack.Screen options={{headerShown:false}} name="ScreenMenu" component={ScreenMenu} />
-      <Stack.Screen options={{headerShown:false}} name="ScreenCV" children={()=><ScreenCV userCv={userCV} setUserCV={ handleUser}/>} />
-      <Stack.Screen options={{headerShown:false}} name="ScreenPostular" component={ScreenPostular} />
-      <Stack.Screen options={{headerShown:false}} name="HomeScreen" component={HomeScreen} />
-     <Stack.Screen options={{headerShown:false}} name="ScreenRegistro" children={()=><ScreenRegistro usersLogin={userLogin} setUsersLogin={handlerAddUser}/>}/>  
+     <Stack.Screen options={{headerShown:false}} name="LoginScreen" children={()=><LoginScreen user={userLogin}/>} />   
+     <Stack.Screen options={{headerShown:false}} name="ScreenMenu" component={ScreenMenu} />  
+    <Stack.Screen options={{headerShown:false}} name="ScreenCV" children={()=><ScreenCV userCv={userCV} setUserCV={ handleUser}/>} /> 
+    <Stack.Screen options={{headerShown:false}} name="ScreenPostular" component={ScreenPostular} /> 
+    <Stack.Screen options={{headerShown:false}} name="ScreenRegistro" children={()=><ScreenRegistro usersLogin={userLogin} setUsersLogin={handlerAddUser}/>}/>   
 
    
     </Stack.Navigator>

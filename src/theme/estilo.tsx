@@ -62,7 +62,7 @@ export const stylesGlobal=StyleSheet.create({
     
       },
       imagen2:{
-        height:'80%',
+        height:'60%',
         width:'60%',
       },
 })

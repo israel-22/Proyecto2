@@ -51,185 +51,87 @@ const handlePostular = () => {
           <StatusBar backgroundColor={PRIMARY_COLOR}/>
           <Title Title='Postulate'/>
           <View style={styles.contenedorLG}>
-            <Image style={styles.imagen2}  source={require('../img/logoBlanco.png')} /> 
+            <Image style={styles.imagen2}  source={require('../img/MG-Logo-2010.png')} /> 
             <TouchableOpacity style={styles.contenedorLG1}  onPress={()=>navigation.dispatch(CommonActions.navigate({name:'ScreenMenu'}))}>
         <Image style={styles.imagen2}  source={require('../img/volver.png')} /> 
         </TouchableOpacity>
           </View>
-          <View style={styles.contenedorLG}>
+          {/* <View style={styles.contenedorLG}>
           {postulacionExitosa && (
                 <View style={styles.mensaje}>
                     <Text style={styles.textoMensaje}>Postulación exitosa</Text>
                 </View>
-            )}</View>
+            )}</View> */}
       <Body2>
      
           <ScrollView style={styles.scrollView}>
          
             <View style={[styles.container, styles.marginBottom]}>
-              <Image style={styles.imagen}  source={require('../img/aki.png')}  /> 
+              <Image style={styles.imagen}  source={require('../img/car1.jpeg')}  /> 
               <View style={styles.textConatiner}>
-              <Text style={styles.txt}>Supermercados AKI busca un bodeguero para el sur de Quito</Text>
+              <Text style={styles.txt}>Modelo 1</Text>
               </View>
               <View style={styles.btn}>
-                <ButtonComponent title='postular' onPress={handlePostular} />
+                <ButtonComponent title='comprar' onPress={handlePostular} />
               </View>
             </View>
             
   
             <View style={[styles.container, styles.marginBottom]}>
-              <Image style={styles.imagen}  source={require('../img/amazon.webp')}  /> 
+              <Image style={styles.imagen}  source={require('../img/car3.png')}  /> 
               <View style={styles.textConatiner}>
-                <Text style={styles.txt}>Amazon busca Choferes Profecionales  para el norte de Guayaquil</Text>
+                <Text style={styles.txt}>Modelo 2</Text>
               </View>
               <View style={styles.btn}>
-              <ButtonComponent title='postular' onPress={handlePostular} />
+              <ButtonComponent title='comprar' onPress={handlePostular} />
               </View>
             </View>
 
             <View style={[styles.container, styles.marginBottom]}>
-              <Image style={styles.imagen}  source={require('../img/bancoG.png')}  /> 
+              <Image style={styles.imagen}  source={require('../img/car4.png')}  /> 
               <View style={styles.textConatiner}>
-                <Text style={styles.txt}>Banco de Guayaquil busca Contadores en Manta</Text>
+                <Text style={styles.txt}>Modelo 3</Text>
               </View>
               <View style={styles.btn}>
-              <ButtonComponent title='postular' onPress={handlePostular} />
+              <ButtonComponent title='comprar' onPress={handlePostular} />
               </View>
             </View>
             <View style={[styles.container, styles.marginBottom]}>
-              <Image style={styles.imagen}  source={require('../img/entrega.png')}  /> 
+              <Image style={styles.imagen}  source={require('../img/car5.jpg')}  /> 
               <View style={styles.textConatiner}>
-                <Text style={styles.txt}>Grupo Entrega busca Chofetes Profecionales Tipo E en Cuenca</Text>
+                <Text style={styles.txt}>Modelo 4</Text>
               </View>
               <View style={styles.btn}>
-              <ButtonComponent title='postular' onPress={handlePostular} />
+              <ButtonComponent title='comprar' onPress={handlePostular} />
               </View>
             </View>
 
             <View style={[styles.container, styles.marginBottom]}>
-              <Image style={styles.imagen}  source={require('../img/venus.png')}  /> 
+              <Image style={styles.imagen}  source={require('../img/car6.jpg')}  /> 
               <View style={styles.textConatiner}>
-                <Text style={styles.txt}>Zapatos Venus busca Vendedores en Valle de los Chillos</Text>
+                <Text style={styles.txt}>Modelo 5</Text>
               </View>
               <View style={styles.btn}>
-              <ButtonComponent title='postular' onPress={handlePostular} />
+              <ButtonComponent title='comprar' onPress={handlePostular} />
               </View>
             </View>
             <View style={[styles.container, styles.marginBottom]}>
-              <Image style={styles.imagen}  source={require('../img/nasa.png')}  /> 
+              <Image style={styles.imagen}  source={require('../img/car7.png')}  /> 
               <View style={styles.textConatiner}>
-                <Text style={styles.txt}>La NASA busca Ingenieros Matematios y Quimicos Con Visa a EEUU </Text>
+                <Text style={styles.txt}>Modelo 6 </Text>
               </View>
               <View style={styles.btn}>
-              <ButtonComponent title='postular' onPress={handlePostular} />
+              <ButtonComponent title='comprar' onPress={handlePostular} />
               </View>
             </View>
   
             <View style={[styles.container, styles.marginBottom]}>
-              <Image style={styles.imagen}  source={require('../img/entrega.png')}  /> 
+              <Image style={styles.imagen}  source={require('../img/car4.png')}  /> 
               <View style={styles.textConatiner}>
-                <Text style={styles.txt}>Grupo Entrega busca Chofetes Profecionales Tipo E en Cuenca</Text>
+                <Text style={styles.txt}>Modelo 7</Text>
               </View>
               <View style={styles.btn}>
-              <ButtonComponent title='postular' onPress={handlePostular} />
-              </View>
-            </View>
-
-            <View style={[styles.container, styles.marginBottom]}>
-              <Image style={styles.imagen}  source={require('../img/sri.jpg')}  /> 
-              <View style={styles.textConatiner}>
-                <Text style={styles.txt}>Servicios de Rentas Internas Busca Secretarias en Manta</Text>
-              </View>
-              <View style={styles.btn}>
-              <ButtonComponent title='postular' onPress={handlePostular} />
-              </View>
-            </View>
-            <View style={[styles.container, styles.marginBottom]}>
-              <Image style={styles.imagen}  source={require('../img/deprati.png')}  /> 
-              <View style={styles.textConatiner}>
-                <Text style={styles.txt}>Almacenes Deprati busca Gerente  para Quisentro Shopyng</Text>
-              </View>
-              <View style={styles.btn}>
-              <ButtonComponent title='postular' onPress={handlePostular} />
-              </View>
-            </View>
-  
-            <View style={[styles.container, styles.marginBottom]}>
-              <Image style={styles.imagen}  source={require('../img/banner.png')}  /> 
-              <View style={styles.textConatiner}>
-                <Text style={styles.txt}>Pintulac busca Axiliares de Bodega en Quininde</Text>
-              </View>
-              <View style={styles.btn}>
-              <ButtonComponent title='postular' onPress={handlePostular} />
-              </View>
-            </View>
-
-            <View style={[styles.container, styles.marginBottom]}>
-              <Image style={styles.imagen}  source={require('../img/tia.png')}  /> 
-              <View style={styles.textConatiner}>
-                <Text style={styles.txt}>Supermercados Tia Busca cajera en Latacunga</Text>
-              </View>
-              <View style={styles.btn}>
-              <ButtonComponent title='postular' onPress={handlePostular} />
-              </View>
-            </View>
-            <View style={[styles.container, styles.marginBottom]}>
-              <Image style={styles.imagen}  source={require('../img/CNT_Logo.svg.png')}  /> 
-              <View style={styles.textConatiner}>
-                <Text style={styles.txt}>CNT busca Tecnicos en Redes en el centro de Loja</Text>
-              </View>
-              <View style={styles.btn}>
-              <ButtonComponent title='postular' onPress={handlePostular} />
-              </View>
-            </View>
-  
-            <View style={[styles.container, styles.marginBottom]}>
-              <Image style={styles.imagen}  source={require('../img/universal.png')}  /> 
-              <View style={styles.textConatiner}>
-                <Text style={styles.txt}>La universal Busca Chef de Reposteria para elaboracion de chocolates en Santo Domingo</Text>
-              </View>
-              <View style={styles.btn}>
-              <ButtonComponent title='postular' onPress={handlePostular} />
-              </View>
-            </View>
-
-            <View style={[styles.container, styles.marginBottom]}>
-              <Image style={styles.imagen}  source={require('../img/pepsi.png')}  /> 
-              <View style={styles.textConatiner}>
-                <Text style={styles.txt}>Pepsi busca Auxiliares de Bodega en Tumbaco norte de Quito</Text>
-              </View>
-              <View style={styles.btn}>
-              <ButtonComponent title='postular' onPress={handlePostular} />
-              </View>
-            </View>
-            <View style={[styles.container, styles.marginBottom]}>
-              <Image style={styles.imagen}  source={require('../img/correoEcuador.png')}  /> 
-              <View style={styles.textConatiner}>
-                <Text style={styles.txt}>Correos del Ecuador busca Analista de Datos en Orellana</Text>
-              </View>
-              <View style={styles.btn}>
-              <ButtonComponent title='postular' onPress={handlePostular} />
-              </View>
-            </View>
-  
-            <View style={[styles.container, styles.marginBottom]}>
-              <Image style={styles.imagen}  source={require('../img/microsoft.webp')}  /> 
-              <View style={styles.textConatiner}>
-                <Text style={styles.txt}>Microsoft busca Desarrolladores de Software en Manabi</Text>
-              </View>
-              <View style={styles.btn}>
-              <ButtonComponent title='postular' onPress={handlePostular} />
-              </View>
-            </View>
-
-            
-            <View style={[styles.container, styles.marginBottom]}>
-              <Image style={styles.imagen}  source={require('../img/huawei.webp')}  /> 
-              <View style={styles.textConatiner}>
-                <Text style={styles.txt}>Huawei busca Vendedores en el centro de Cotopaxi</Text>
-              </View>
-              <View style={styles.btn}>
-              <ButtonComponent title='postular' onPress={handlePostular} />
+              <ButtonComponent title='comprar' onPress={handlePostular} />
               </View>
              
             </View>     
@@ -242,7 +144,7 @@ const handlePostular = () => {
   
   const styles = StyleSheet.create({
     scrollView: {
-        paddingHorizontal: 10,
+        paddingHorizontal: 30,
     },
     root: {
         flexDirection: 'row',
@@ -299,8 +201,8 @@ const handlePostular = () => {
     },
  
     imagen2: {
-      height: '80%',
-      width: '60%',
+      height: '50%',
+      width: '50%',
     },
     btnR: {
       position: 'absolute',
